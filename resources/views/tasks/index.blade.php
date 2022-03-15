@@ -1,7 +1,10 @@
 @extends('layout')
 
 @section('content')
-    <div class="container">
-        @section('head', 'My head')
+    @section('head', 'My head')
+    <div class="container bootstrap snippets bootdey">
+        @livewire('tasks.task')
     </div>
+
+
 @endsection
