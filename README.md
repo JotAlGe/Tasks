@@ -1,55 +1,28 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATwAAACgCAMAAACmCCC4AAABF1BMVEX39/dMU6HzbKT///z6+vlIT585Qpo9RZzu7vJ1erJETJ4hLZT09PZQV6PV1uTP0OHm5u2WmcL3/PoyO5hkaavn6O7Cw9nzYp8eK5P0baTaSaGvsc/zX547RJubnsXe3+ldY6i3udPExtujpsnzd6pqb66Kjr2Dh7n36u9UW6V7gLaPk78AAG0sNpdtcq8nMpX23uf0pMP1sMriVaKoq8z1wdX0kbj2zt3zdKgAAGP0mr0WJZGHiK71ts5XWJLZM5kUNGo1OW70hrL21+LlSZs3OIPkZal9faiTlLUVF3YAAFpkZZnso8fiaaxJSovtutTlirzgZ56uWI/AXZQ2S5W+o8RnVqFPP3aFTYMuPXnPjbE1R3YcI2NH5HekAAANKElEQVR4nO2bCXvaRhrHJb+jAyEECHMZGyHJgAEbOy526riuU6dNj+ym2z26291+/8+xc0kaYWFsnJK2ef/PkwSh+8d7zkw0DYVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqG2I0LIx36EP6R83ydHZ2dnR/zTx36aP5J8/+ji1WF7v91u7+93L2/OkN9j5WsXh/vtnUzt/Z3zI8T3CPnaeVsll/C7PPI/9qP97uVfFKDj2n+hIb6H5Lt3K9Ax69s5Q3qr5Z+tJCeM7+YPQI8A1fYDtP9yP5cl7u5o4shZ4v6L3z098EbDYb0GW76tyq79+cWRzyq8N6/2VXrtVw/Sy1XVBMj2TQDicr0Vjq7D7dLz3yjsLnwJiZZ8lyq+/b88QA+8MNISXNCbmFYp2C494p02gRDwrpvbvDE5yhz00PW17N7+hUKv+/XFanq7pmU5EhfMTF3XjcZ26cGszk0Opott3tc/TM3uzqf+1rRTl8vFwp3boxWPRWKL4ZoIh7EbOpMx3ar/QCkk4llmW7yv/yI1vM/pMyyOr66+8ZL7q7bX/eztCtODksFwmS7bIJ4l4A22C+9jWB45SvHsH/nw7dV3331/fBWltvcqg7dzu6JgSeDZ/II1aXmlrcJLYl5wXdsePP8uddpzn1R/aAK4x8fH6QO4WUDs7u0VXyMHj25x02tE280YEJ/2o6i+zWyrZNo2fYB37+it4Yvj4zA1vZuUXvez2+KMm4enaePGgelsuWRgGX88GIyCbUa8y9SwaBkM33/J4H17fPxF+gyK6e3s3RZa0zI8cIPaRyj1t91hKBGvfUYovKsqQEDd9tsUnoK3u3f7Y5HpLcNjNfM2nv4jyz9P7apNscCXx1dfvqPsjnvp2/sXit/u/fVx8D6ICn6BNV/ldytby9MKhOuZz5fVeDuXFAsJr465rhQjOsvgtfdujwqu8pvAI8Sr2vkARnPp8lca1NKvwK5W3XQ3uFW5h4DrVaPsRNo9Bq0wbHnu85w889od3vnDe8EuVh7RVQrlYr9dhseDT7Iv+5iJLH3JtgnJRSyIGs6ks1API83BqdNZqoFLZaczEuXxqDOpdPoJyUVZn3Ro7UdIOOiYk0mnB/JeUem0sVsqDa3OsPUMfIpL0kKFX/ods73cM2u5YuVv6+GRYFqZ9MVHtz6Z9JcfEFqDysxNvwXSGg2chmkM+17yMqTaiWj0PamqTunMCDQrfeXhYDSkBjdgzQz0JzZAzRA1Mmk1Atos0ZzvOZOQ7oCgwwtA8CrWogZczZ6hb56dle5CwqNu0Irc/AVz8D5bC49WyYZuWEN+kYmj69Z4yfsieoBTSbZoc2c5/AKGY+7K5gYGrNSB3jA7lYQVYFfvuNml7E6T0F+o3KTHNjzCoDui0Rjy88N59bonfhD6DWHVILXAJNpRY+9tXhdmFbJ0W61gytZVO7S924LLLMGLHb4V0NcKreSjeviEfWm1xDsFFdHOCRkNETHggKEQcJLTBrz4hN0smREBF0x6sFtmt6dsxfmVKkdpNKqJH8/p6TCzxIBfkjDAK29Kz+9m8C5XNK5KNcPhnd2PEksdRp3Ds7wUnjPKha7qQQaPVBuGxCb/PeBBDUrc/aAUJ7cjQVn826pkSWHCLkKCU2qMCbxyDt5JLFmBdhIQWJg2v6tW7cUhx0i86w2Hf3ylAP58BTz/ZTsH780T4Gm2qd/LwzDkRzuCiGyEzUmpNDHFZZgpkKrFXy1y0sxTlz8BOfEStwtO+Z4Z21MIL9glLBvZQRRbU5pkBShYnOjj0bw8t7kjTzYzPTWR7hcVIVouLnJ4BaN6q+HBjH92lCBPPA7U4SZBKvxMa8pDeE10xfw64PDeGMwkZaTMBCuV5ylDUgSPgqNxYWyWzck4oh93+XPA2PF4ETDidyIHm3XhKrz2irFO1bUZvIJaZTU80hSmZykHTwUvFvZhwWlZsYjpBEbsVIcNLpGFCGd9mW1IS5fIqP/KlEFEjujxwa9CeDxD1D2NV0HEO+FnhZbM9DAu8TvNNzI9Fd7OYSE81WufDk8TOHQnDfKkZma2SDg7I3t4kqF2eWmRklLyhMwc1KcNzlfn0bMYHvTMtM2GMR/yI420/uH3ILaav5+g3NqKQtNTehBeqty+fErMS0f39PTNhSPzgVPSEm7qpZeEBdtrsbeTrypJkdq1yyIhTxChiFIiqdCUw08vhmeXs3QgDVUgF7fjI6egVzfxW39HVbtgXYUa8QS8N0+yPBZglMKEvqMwPAFmzM+rqAHR4vGQvWTiZIPMfWE0z4IcrWN4cJyKgFoc8+JsSJYmJ36lWR+IFCz4VccbDT7nzIrqHj3/PDf/uLNX2Nw+BE/m02RQHmQRyA8FQxYyJH0bzlZMf0ibc8vMfUUJ7DYafGM2S2MVdTp7teXBbpgZXiii6LDUTzVlX5H+RtMeyiB74rkKPuK7l7mZ7+5bCm9th5GHlyQImTWJCIHiaYUVGtOwl4ntN/hbSu+EMbUsUbKQ3pzPVIgSBSrMmqEvbasY3oHitTHPzSSuK+I23htvBO9maYFK+/DC9ROdvVjaS/NF4ZjUg/BIYGZZIWk5eN8g99CuTJFipqI4IVWTFhlzHpwmreCEM6FGSd2aXyQJ/8Vuq0yAQr0uB1kU8YN6m030vbm3uqe9f/jq/Obm/MXlzr19NOTtFQ3EPwgv3RuQpDOTHQcJDvRCCcujF+IWAU6VNK9tHgUJVEIiAqH03bSCWQ9vJkYo4J6m94YuHqfCpVHtduFqs267ONmugSerYmPMvE8YXo2o8BxzSXLuiPapnEc8BR73YTQDmT9YyuB2CYOkgnms5cF0uJtXxdpsIFIZY18CVbDBvLYo5K2BR33OkL4Ku4bEKODIzGs3c6olo1XCWUmzo/HiRSRZ/heM6lEljX6Pg0cWwpDns6iVU6RtZnhZCdzd+anb3Snc6CYbe8XDeevgJQ1ZHcSHbJAlMUmSV/q6osGFeYmVZiKBMPPjJY2IgqM0Ua6H19rlV6v3V93vyfQSQn9//fqrnxIT+0fRBje8gipvLbxkKOCA8MSbrcMQEVA3VoZr0eCSViMmSemSDAYMGjYnlsJZD08kGxJVNkoPBZIzQJTQe13/ReL66fUvuv5PQY9ufPVebOwV59r18GjCFHnCyTcUsts48Fb99rLBJae0lEuGpESUo1ULpON5XGvhyVqROn7ufs9ZDSemZbsUEH27f8mNX9g7/Sw2/s13/dzmhlcwmKeth6eJWKcbWc0inluM7OUXZrCBkOzpRIPLx4DlYIocz7N5kedkAyKPgCd8HOJBiouA3Z8MN17P5d/QHqL9H47LisTGa+5N1o9s47+v+S7n5deU3YolemvhSUp63vBSv7UWyttEw8YwO0D28uzPqXxH0aJqvAQ8UDivhScGTem/g7krwh4Es840ik82Gxhg9C4O7978T7xE5F/cHb4UuHTTf3l3eBH8yjcO4Me3b1ctTF4Lj/qaka/h5OtEokw+GNti+szuTSyDwsxyzUnyKUzGLGX5xz7N4+we6+HR55TGOy2Pwmo1iiflUQ2I2sM9VbSXgPdijC0ibONXaSK81/C+Ea/H9qxa3Lgenizw9LRNS86cOrLUG87ieLZrqt0bP2AiXywZh9KyKSBZB0o9Ah6xy5HYG/TnFX0wDjUgGw8MZI8oLY/3PlYCT9PS1XYHD11+PTx6B2F6xm4+1ZGBIy2S9WbJNIYyxSMNjgTZoBsMxctCXW2rHgGP/obXXjKnkS5sIcoA3yb6MPAaD8CTQ3f68pA30ebq5Jk4pqRaixh9z3xVSyc2sskMrsKBgZOlibvWdZhPrgSak+etJMzDc54MT+CSXSYJeXZo5KOwML2C5aKwMB2FnGEZublAqJfYCHquvgCTeR/0cjM3YPAvZfsG01g0IEvPDV5jHqgTt8HoevYcu8vgtTaDp9m65Tip8RMaupxGb8k/a4blWEbBsk2w44ppiTEVy5xGSxW/a41rrleZ5vJMOXTtXidv2yF7gFZZ9sVeJ6R/OfHyj0W0ennQ81zmtXZVpIwH2ayVTIabWh59ojDuKdPTrXhxbxkDIa1Fq7iLpL9/K56NRv3QI/cqVmKPy51GHgJUK53OYKm2htDsdJwoycRVvdNZ/gXFHjcsNTonlnPSccYt7dkr+qTfiaC1ATxNy7eIxQ3jA10kERG8+AAg9vIbEnDvL3GiFa9yIN1qrgDDZ3I9L3A/zFpIt2IZiafl4ckBS+tD9YO/F32A9XnppbS4NJarOnLwNCLmGTYaqP5klPXHS/C8Bo3j+gde9PmnVR6eRpr9UW/D4cJPT7kiWePFEKJ7rJYsD/UUyWbL2HDl1actmiJ40bfl//70JxGt303TaaHhbSTaLgWfxP/h+W2E6FAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBTqWfo/6C8kAHZM95kAAAAASUVORK5CYII=" />
 </p>
 
 ## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel look amazing to me!!!
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+I'm learning laravel and laravel livewire and these are my projects to practice, the concepts learned.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Technologies
+> Laravel
+> Bootstrap
+> Livewire
+> MySql
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+[Proyect repository](https://github.com/JotAlGe/Tasks).
 
 ## Code of Conduct
 
