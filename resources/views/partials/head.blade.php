@@ -59,5 +59,6 @@
                 .v-middle, [slider], slider {
                 vertical-align: middle;
                 }
+
         </style>
         @livewireStyles
