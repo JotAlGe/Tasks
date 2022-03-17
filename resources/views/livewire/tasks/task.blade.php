@@ -3,7 +3,6 @@
     <button wire:click="$toggle('showPartial')" type="button" class="btn btn-outline-dark mb-4 fw-bolder">
         Create a new task
     </button>
-
     @if($showPartial)
         @include('livewire.tasks.create')
     @else
