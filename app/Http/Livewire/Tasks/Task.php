@@ -43,7 +43,13 @@ class Task extends Component
     public function save()
     {
         $this->validate();
-        session()->flash('success', 'Todo ok!');
+        ModelsTask::create([
+            'description' => $this->task,
+            'date' => now(),
+            'category_id' => $this->category_id,
+            'priority_id' => $this->priority_id
+        ]);
+        session()->flash('success', 'Tarea agregada!');
     }
 
     public function render()
