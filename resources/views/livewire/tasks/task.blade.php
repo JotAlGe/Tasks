@@ -1,7 +1,10 @@
 
 <div class="row">
-    <button wire:click="$toggle('showPartial')" type="button" class="btn btn-outline-dark mb-4 fw-bolder">
-        Create a new task
+    <button wire:click="$toggle('showPartial')" type="button" class="btn
+    @if(!$showPartial) btn-outline-dark @else btn-outline-danger @endif
+    mb-4
+    fw-bolder">
+        @if(!$showPartial) Create a new task @else Cancelar @endif
     </button>
     @if($showPartial)
         @include('livewire.tasks.create')
