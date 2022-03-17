@@ -1,14 +1,14 @@
-<div class="container bootdey">
-    <div class="col-md-8 col-sm-12">
+<div class="container bootdey d-flex justify-space-between">
+    <div class="col-md-6 bg-dark p-4 text-info rounded-1">
         <div class="well">
             <form class="form">
-            <h4>Ingresa una nueva tarea</h4>
+            {{-- <h4>Ingresa una nueva tarea</h4> --}}
 
                 {{-- priorities --}}
-                <label class="mt-4">Elige un prioridad</label>
+                <label class="mt-1">Elige un prioridad</label>
                 <select class="form-select" aria-label="Default select example" wire:model="priority_id"
                 name="priority">
-                    <option selected>Open this select menu</option>
+                    <option selected>Prioridad</option>
                     @forelse ($priorities as $priority)
 
                         <option value="{{$priority->id}}" @selected(true)>{{$priority->description}}</option>
@@ -16,13 +16,14 @@
                         <h2>No hay prioridades, aún!</h2>
                     @endforelse
                 </select>
-                @error('priority_id') <span class="text-danger">{{ $message }}</span> @enderror
+                @error('priority_id') <span class="text-danger fw-bold">{{ $message }}</span> @enderror
 
                 <br>
+
                 {{-- categories --}}
                 <label class="mt-4">Elige un Categor[ia</label>
                 <select class="form-select" aria-label="Default select example" wire:model="category_id" name="category">
-                    <option selected>Open this select menu</option>
+                    <option selected>Categorías</option>
                     @forelse ($categories as $category)
 
                         <option value="{{$category->id}}">{{$category->description}}</option>
@@ -30,18 +31,21 @@
                         <h2>No hay prioridades, aún!</h2>
                     @endforelse
                 </select>
-                @error('category_id') <span class="text-danger">{{ $message }}</span> @enderror
-                
+                @error('category_id') <span class="text-danger fw-bold">{{ $message }}</span> @enderror
+
                 <div class="input-group text-center mt-4">
                     <input wire:model="task" type="text" placeholder="New task to do..." class="form-control input-lg">
                     <span class="input-group-btn">
-                        <button wire:click="save" type="button" class="btn btn-lg btn-primary"> Acordarme</button>
+                        <button wire:click="save" type="button" class="btn btn-lg btn-warning"> Agendar</button>
                     </span>
                 </div>
-                @error('task') <span class="text-danger">{{ $message }}</span> @enderror
-                @if(session()->has('success')) <span class="text-success">{{ session('success') }}</span> @endif
+                @error('task') <span class="text-danger fw-bold">{{ $message }}</span> @enderror
+                @if(session()->has('success')) <span class="text-success fw-bold mt-2">{{ session('success') }}</span> @endif
 
             </form>
         </div>
+    </div>
+    <div class="col-md-6 bg-dark p-4 text-info d-flex justify-content-center">
+        <h1 class="display-1">Crea una nueva tarea</h1>
     </div>
 </div>

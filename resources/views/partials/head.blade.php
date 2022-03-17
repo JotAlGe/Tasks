@@ -60,5 +60,5 @@
                 vertical-align: middle;
                 }
 
-        </style>
+
         @livewireStyles

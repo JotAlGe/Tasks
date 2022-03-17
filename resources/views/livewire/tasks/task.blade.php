@@ -4,7 +4,7 @@
     @if(!$showPartial) btn-outline-dark @else btn-outline-danger @endif
     mb-4
     fw-bolder">
-        @if(!$showPartial) Create a new task @else Cancelar @endif
+        @if(!$showPartial) Crea una nueva tarea @else Cancelar @endif
     </button>
     @if($showPartial)
         @include('livewire.tasks.create')

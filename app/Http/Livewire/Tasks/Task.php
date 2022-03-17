@@ -60,7 +60,7 @@ class Task extends Component
     public function render()
     {
         return view('livewire.tasks.task', [
-            'tasks' => ModelsTask::all()
+            'tasks' => ModelsTask::orderBy('created_at', 'desc')->get()
         ]);
     }
 }
