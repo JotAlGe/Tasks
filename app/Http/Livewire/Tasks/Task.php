@@ -49,6 +49,11 @@ class Task extends Component
             'category_id' => $this->category_id,
             'priority_id' => $this->priority_id
         ]);
+
+        $this->reset([
+            'task', 'category_id', 'priority_id'
+        ]);
+
         session()->flash('success', 'Tarea agregada!');
     }
 
