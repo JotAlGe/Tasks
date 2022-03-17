@@ -6,18 +6,22 @@
 
                 {{-- priorities --}}
                 <label class="mt-4">Elige un prioridad</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" wire:model="priority_id"
+                name="priority">
                     <option selected>Open this select menu</option>
                     @forelse ($priorities as $priority)
 
-                        <option value="{{$priority->id}}">{{$priority->description}}</option>
+                        <option value="{{$priority->id}}" @selected(true)>{{$priority->description}}</option>
                     @empty
                         <h2>No hay prioridades, aún!</h2>
                     @endforelse
                 </select>
+                @error('priority_id') <span class="text-danger">{{ $message }}</span> @enderror
+
+                <br>
                 {{-- categories --}}
                 <label class="mt-4">Elige un Categor[ia</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" wire:model="category_id" name="category">
                     <option selected>Open this select menu</option>
                     @forelse ($categories as $category)
 
@@ -26,7 +30,8 @@
                         <h2>No hay prioridades, aún!</h2>
                     @endforelse
                 </select>
-
+                @error('category_id') <span class="text-danger">{{ $message }}</span> @enderror
+                
                 <div class="input-group text-center mt-4">
                     <input wire:model="task" type="text" placeholder="New task to do..." class="form-control input-lg">
                     <span class="input-group-btn">
