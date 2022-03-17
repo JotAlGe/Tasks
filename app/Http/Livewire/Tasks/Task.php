@@ -10,7 +10,22 @@ use Livewire\Component;
 class Task extends Component
 {
     public $showPartial = false;
-    public $message = 'hola';
+    public $task;
+
+    protected $rules = [
+        'task' => ['required', 'min:6', 'max:255']
+    ];
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+    public function save()
+    {
+        $this->validate();
+        session()->flash('success', 'Todo ok!');
+    }
 
     public function render()
     {
