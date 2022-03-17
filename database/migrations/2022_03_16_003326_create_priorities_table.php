@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('priorities', function (Blueprint $table) {
             $table->id();
-            $table->string('description')->unique();
-            $table->foreignId('color_id')->constrained();
+            $table->char('description')->unique();
+            $table->foreignId('color_id')->constrained()
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

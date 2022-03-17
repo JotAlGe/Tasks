@@ -15,10 +15,15 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('description')->unique();
+            $table->string('description', 250)->unique();
             $table->dateTime('date');
-            $table->foreignId('category_id')->constrained();
-            $table->foreignId('priority_id')->constrained();
+
+            $table->foreignId('category_id')->constrained()
+                ->onDelete('cascade');
+
+            $table->foreignId('priority_id')->constrained()
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

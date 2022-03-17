@@ -12,7 +12,7 @@ class Task extends Model
     protected $guarded = [];
 
     // relation with categories
-    public function categories()
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }

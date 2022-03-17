@@ -5,6 +5,7 @@
 @section('content')
 
     <div class="container bootstrap snippets bootdey">
+        
         @livewire('tasks.task')
     </div>
 

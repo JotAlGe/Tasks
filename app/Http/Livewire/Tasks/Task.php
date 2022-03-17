@@ -9,6 +9,9 @@ use Livewire\Component;
 
 class Task extends Component
 {
+    public $showPartial = false;
+    public $message = 'hola';
+
     public function render()
     {
         return view('livewire.tasks.task', [
