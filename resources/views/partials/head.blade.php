@@ -60,5 +60,8 @@
                 vertical-align: middle;
                 }
 
+        </style>
 
-        @livewireStyles
+    @livewireStyles
+
+    <script src="https://kit.fontawesome.com/135afbfc6b.js" crossorigin="anonymous"></script>

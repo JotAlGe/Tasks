@@ -40,6 +40,7 @@ class Task extends Component
     }
 
 
+    // save a task
     public function save()
     {
         $this->validate();
@@ -57,6 +58,14 @@ class Task extends Component
         session()->flash('success', 'Tarea agregada!');
     }
 
+    // delete a task
+    public function destroy($id)
+    {
+        ModelsTask::destroy($id);
+        session()->flash('deleted', 'Tarea eliminada');
+    }
+
+    // render
     public function render()
     {
         return view('livewire.tasks.task', [
