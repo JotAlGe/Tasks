@@ -5,11 +5,13 @@ namespace App\Http\Livewire\Tasks;
 use App\Models\Category;
 use App\Models\Priority;
 use App\Models\Task as ModelsTask;
+use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 
 class Task extends Component
 {
     public $showPartial = false;
+    public $showEdit = false;
     public $task, $priorities, $categories, $category_id, $priority_id;
 
     // rules validations
@@ -39,6 +41,21 @@ class Task extends Component
         $this->validateOnly($propertyName);
     }
 
+    // edit
+    public function edit($id)
+    {
+        $this->task = ModelsTask::find($id);
+        $this->showEdit = true;
+        return view('livewire.tasks.edit');
+    }
+
+    // update
+    public function update($task_id)
+    {
+        $this->validate();
+
+        return dd($task_id);
+    }
 
     // save a task
     public function save()
