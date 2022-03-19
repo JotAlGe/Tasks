@@ -12,6 +12,7 @@ class Task extends Component
 {
     public $showPartial = false;
     public $showEdit = false;
+    public $showShowView = false;
     public $task, $priorities, $categories, $category_id, $priority_id, $task_id;
 
     // rules validations
@@ -97,6 +98,13 @@ class Task extends Component
         session()->flash('success', 'Tarea agregada!');
 
         $this->default();
+    }
+
+    // show view
+    public function show($id)
+    {
+        $this->showShowView = true;
+        $this->task = ModelsTask::findOrFail($id);
     }
 
     // delete a task
