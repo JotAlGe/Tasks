@@ -16,6 +16,14 @@
 
         @endif
 
+        {{-- success message --}}
+        @if(session()->has('success'))
+            <div class="alert bg-dark alert-dismissible fade show" role="alert">
+                <strong class="text-info">{{ session('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         {{-- show modal edit --}}
         @if($showEdit)
             @include('livewire.tasks.edit')

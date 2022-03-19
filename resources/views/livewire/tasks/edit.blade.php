@@ -38,7 +38,7 @@
                      >
                     <span class="input-group-btn">
                         <button wire:click="update" type="button" class="btn btn-lg btn-warning">Actualizar</button>
-                        <button wire:click="$set('showEdit', false)" type="button" class="btn btn-lg btn-danger">Cancelar</button>
+                        <button wire:click="default" type="button" class="btn btn-lg btn-danger">Cancelar</button>
                     </span>
 
 

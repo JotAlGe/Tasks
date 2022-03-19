@@ -40,7 +40,7 @@
                     </span>
                 </div>
                 @error('task') <span class="text-danger fw-bold">{{ $message }}</span> @enderror
-                @if(session()->has('success')) <span class="text-success fw-bold mt-2">{{ session('success') }}</span> @endif
+
 
             </form>
         </div>

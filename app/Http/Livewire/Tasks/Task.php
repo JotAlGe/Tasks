@@ -69,10 +69,16 @@ class Task extends Component
             'priority_id' => $this->priority_id
         ]);
 
+        $this->default();
+    }
+
+    public function default()
+    {
+        $this->showPartial = false;
+        $this->showEdit = false;
         $this->reset([
             'task', 'category_id', 'priority_id'
         ]);
-        $this->showEdit = false;
 
         return redirect()->to('/');
     }
@@ -88,11 +94,9 @@ class Task extends Component
             'priority_id' => $this->priority_id
         ]);
 
-        $this->reset([
-            'task', 'category_id', 'priority_id'
-        ]);
-
         session()->flash('success', 'Tarea agregada!');
+
+        $this->default();
     }
 
     // delete a task
