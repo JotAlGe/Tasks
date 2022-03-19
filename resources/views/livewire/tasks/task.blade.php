@@ -28,7 +28,7 @@
             @include('livewire.tasks.edit')
         @else
 
-        
+
             @forelse ($tasks as $task)
 
             <div class="col-sm-6 col-xs-12">

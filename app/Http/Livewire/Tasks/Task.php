@@ -12,7 +12,7 @@ class Task extends Component
 {
     public $showPartial = false;
     public $showEdit = false;
-    public $task, $priorities, $categories, $category_id, $priority_id;
+    public $task, $priorities, $categories, $category_id, $priority_id, $task_id;
 
     // rules validations
     protected $rules = [
@@ -44,17 +44,29 @@ class Task extends Component
     // edit
     public function edit($id)
     {
-        $this->task = ModelsTask::find($id);
+        #$this->task_id = ModelsTask::find($id);
+        $task = ModelsTask::find($id);
+        $this->task_id = $task->id;
+        $this->task = $task->description;
+
         $this->showEdit = true;
         return view('livewire.tasks.edit');
     }
 
     // update
-    public function update($task_id)
+    public function update()
     {
+        // NOTA IMPORTANTE!!!  validar los campos que se van a actualizar
         $this->validate();
 
-        return dd($task_id);
+        $task = ModelsTask::find($this->task_id);
+        $task->update([
+            'description' => $this->task,
+            'date' => now(),
+            'category_id' => $this->category_id,
+            'priority_id' => $this->priority_id
+        ]);
+        $this->showEdit = false;
     }
 
     // save a task
