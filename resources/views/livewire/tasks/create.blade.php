@@ -46,6 +46,6 @@
         </div>
     </div>
     <div class="col-md-6 bg-dark p-4 text-info d-flex justify-content-center">
-        <h1 class="display-1">Crea una nueva tarea</h1>
+        <h1 class="display-5">Crea una nueva tarea</h1>
     </div>
 </div>
