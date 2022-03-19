@@ -48,6 +48,8 @@ class Task extends Component
         $task = ModelsTask::find($id);
         $this->task_id = $task->id;
         $this->task = $task->description;
+        $this->category_id = $task->category_id;
+        $this->priority_id = $task->priority_id;
 
         $this->showEdit = true;
         return view('livewire.tasks.edit');
