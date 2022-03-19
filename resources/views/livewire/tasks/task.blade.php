@@ -56,16 +56,20 @@
                                 <div class="row">
                                     <div class="clearfix">
                                         <div class="pull-right d-flex justify-content-between">
-                                            <small class="text-light bg-danger p-2 rounded-start mx-1"> "{{ $task->category->description }}"
-                                            </small>
+                                            <span
+                                            style="max-height:20px"
+                                            class="badge rounded-pill bg-success"> "{{ $task->category->description }}"
+                                            </span>
 
-                                            <small
+                                            <span
+                                            style="max-height: 10px"
                                             class="text-light
+                                            badge rounded-pill bg-success px-2 pb-3
                                             {{-- accediendo a los colores de la prioridad a través de su relación --}}
                                             bg-{{ $task->priority->color->description}}
-                                            p-2 rounded-start">Prioridad: 
+                                            p-2 rounded-fill">Prioridad:
                                                 {{ $task->priority->description}}
-                                            </small>
+                                            </span>
                                             <button wire:click="edit({{$task->id}})" class="btn btn-link">
 
                                             {{-- edit icon --}}
