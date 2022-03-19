@@ -36,7 +36,12 @@
                      <input type="text" placeholder="Actualizar la tarea..." class="form-control input-lg"
                      wire:model="task"
                      >
-                     <button wire:click="update" type="button" class="btn btn-lg btn-warning">Actualizar</button>
+                    <span class="input-group-btn">
+                        <button wire:click="update" type="button" class="btn btn-lg btn-warning">Actualizar</button>
+                        <button wire:click="$set('showEdit', false)" type="button" class="btn btn-lg btn-danger">Cancelar</button>
+                    </span>
+
+
                  </div>
                  @error('task') <span class="text-danger fw-bold">{{ $message }}</span> @enderror
             </form>

@@ -1,18 +1,11 @@
 
 <div class="row">
-
-    <button wire:click="$toggle('showPartial')" type="button" class="btn
-    @if(!$showPartial) btn-outline-dark @else btn-outline-danger @endif
-    mb-4
-    fw-bolder">
-        @if(!$showPartial) Crea una nueva tarea @else Cancelar @endif
-    </button>
+    {{-- button --}}
+    @include('partials.button')
 
     @if($showPartial)
         @include('livewire.tasks.create')
     @else
-
-
 
         {{-- alert deleted --}}
         @if(session()->has('deleted'))
@@ -27,7 +20,6 @@
         @if($showEdit)
             @include('livewire.tasks.edit')
         @else
-
 
             @forelse ($tasks as $task)
 
