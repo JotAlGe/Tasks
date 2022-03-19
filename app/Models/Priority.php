@@ -18,7 +18,7 @@ class Priority extends Model
     }
 
     // relation with colors
-    public function priority()
+    public function color()
     {
         return $this->belongsTo(Color::class);
     }

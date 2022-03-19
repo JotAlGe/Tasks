@@ -1,4 +1,3 @@
-
 <div class="row">
     {{-- button --}}
     @include('partials.button')
@@ -47,8 +46,8 @@
                                             <h4 class="text-thin mt text-white">{{ $task->description }}</h4>
                                         </button>
 
+                                        <small class="text-warning">Creado hace {{ $task->created_at->diffForHumans() }}</small>
 
-                                        <small class="text-info">{{ $task->priority->description}}</small>
                                         <button wire:click="destroy({{ $task->id }})" class="btn btn-link">
                                             <i class="fa fa-trash text-danger" aria-hidden="true"></i>
                                         </button>
@@ -57,8 +56,16 @@
                                 <div class="row">
                                     <div class="clearfix">
                                         <div class="pull-right d-flex justify-content-between">
-                                            <small class="text-danger fst-italic fw-bolder">Category: "{{ $task->category->description }}"</small>
-                                            <small class="text-warning">Creado hace {{ $task->created_at->diffForHumans() }}</small>
+                                            <small class="text-light bg-danger p-2 rounded-start mx-1"> "{{ $task->category->description }}"
+                                            </small>
+
+                                            <small
+                                            class="text-light
+                                            {{-- accediendo a los colores de la prioridad a través de su relación --}}
+                                            bg-{{ $task->priority->color->description}}
+                                            p-2 rounded-start">Prioridad: 
+                                                {{ $task->priority->description}}
+                                            </small>
                                             <button wire:click="edit({{$task->id}})" class="btn btn-link">
 
                                             {{-- edit icon --}}
