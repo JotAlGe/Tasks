@@ -39,11 +39,48 @@
 
                         <div class="panel-body py-2">
                                 <div class="row">
+                                    <div class="clearfix">
+                                        <div class="pull-right d-flex justify-content-between">
+                                            <span
+                                            style="max-height:20px"
+                                            class="badge rounded-pill bg-secondary col-md-2 pt-1">
+                                             "{{ $task->category->description }}"
+                                            </span>
+
+                                            <span
+                                            style="max-height: 20px"
+                                            class="text-light
+                                                    badge rounded-pill pb-3
+
+                                            {{-- accediendo a los colores de la prioridad a través de su relación --}}
+                                                    bg-{{ $task->priority->color->description}}
+                                                    p-2 rounded-fill">Prioridad:
+                                                {{ $task->priority->description}}
+                                            </span>
+                                            <button
+                                                wire:click="edit({{$task->id}})"
+                                                class="btn btn-link col-md-8 text-end">
+
+                                                {{-- edit icon --}}
+                                                <i class="fa fa-edit text-orange" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
                                     <div class="d-flex justify-content-between align-items-center">
 
                                         {{-- link to show view --}}
                                         <button wire:click="show({{ $task->id }})" class="btn btn-link text-decoration-none">
-                                            <h4 class="text-thin mt text-white">{{ $task->description }}</h4>
+                                            <h4
+                                            class="text-thin mt text-white"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="top"
+                                            title="Ver a {{ $task->description }}"
+                                            >
+                                                {{ $task->description }}
+                                            </h4>
                                         </button>
 
                                         <small class="text-warning">Creado hace {{ $task->created_at->diffForHumans() }}</small>
@@ -53,31 +90,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="clearfix">
-                                        <div class="pull-right d-flex justify-content-between">
-                                            <span
-                                            style="max-height:20px"
-                                            class="badge rounded-pill bg-success"> "{{ $task->category->description }}"
-                                            </span>
 
-                                            <span
-                                            style="max-height: 10px"
-                                            class="text-light
-                                            badge rounded-pill bg-success px-2 pb-3
-                                            {{-- accediendo a los colores de la prioridad a través de su relación --}}
-                                            bg-{{ $task->priority->color->description}}
-                                            p-2 rounded-fill">Prioridad:
-                                                {{ $task->priority->description}}
-                                            </span>
-                                            <button wire:click="edit({{$task->id}})" class="btn btn-link">
-
-                                            {{-- edit icon --}}
-                                            <i class="fa fa-edit text-orange" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
