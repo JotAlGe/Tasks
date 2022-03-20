@@ -80,8 +80,6 @@ class Task extends Component
         $this->reset([
             'task', 'category_id', 'priority_id'
         ]);
-
-        return redirect()->to('/');
     }
 
     // save a task
