@@ -2,6 +2,10 @@
     {{-- button --}}
     @include('partials.button')
 
+    @if(!$showShowView && !$showEdit && !$showPartial)
+        @include('partials.search')
+    @endif
+
     @if($showShowView)
         @include('livewire.tasks.show')
     @else
@@ -29,6 +33,7 @@
 
             {{-- show modal edit --}}
             @if($showEdit)
+
                 @include('livewire.tasks.edit')
             @else
 
@@ -95,7 +100,7 @@
                         </div>
                     </div>
                 @empty
-                    <h2>No hay tareas, todavía...</h2>
+                    <h2>No hay tareas...</h2>
                 @endforelse
             @endif
         @endif

@@ -13,7 +13,7 @@ class Task extends Component
     public $showPartial = false;
     public $showEdit = false;
     public $showShowView = false;
-    public $task, $priorities, $categories, $category_id, $priority_id, $task_id;
+    public $task, $priorities, $categories, $category_id, $priority_id, $task_id, $searchTask;
 
     // rules validations
     protected $rules = [
@@ -116,7 +116,11 @@ class Task extends Component
     public function render()
     {
         return view('livewire.tasks.task', [
-            'tasks' => ModelsTask::orderBy('created_at', 'desc')->get()
+            'tasks' => ModelsTask::orderBy('created_at', 'desc')
+                ->when($this->searchTask, function ($query) {
+                    return $query->where('description', 'like', "{$this->searchTask}%");
+                })
+                ->get()
         ]);
     }
 }
